@@ -12,6 +12,8 @@ import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import Button from '@mui/material/Button';
 
+import { Link } from "react-router-dom";
+
 
 export default function ItemCard({props}) {
   const [expanded, setExpanded] = React.useState(false);
@@ -19,6 +21,13 @@ export default function ItemCard({props}) {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  const handleDetails=(e) => {
+
+    let id=e.target.id;
+    console.log(id)
+
+  }
 
   return (
     <Card sx={{ maxWidth: 300 }}>
@@ -46,7 +55,8 @@ export default function ItemCard({props}) {
         <Typography variant="body2" color="text.secondary">
           
         </Typography>
-        <Button variant="contained">buy</Button>
+        {/* <Button id={props.id} variant="contained" onClick={handleDetails}>view details</Button> */}
+        <Link to="detail" state={{productId: props.id}}>go to details</Link>
       </CardContent>
    
      
