@@ -1,14 +1,15 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route,useLocation } from "react-router-dom";
 import ItemCard from "../card/card.js";
 import Loder from "../loder/loder"
 function Home() {
   // const [loding, setScoops] = useState(true);
   // const [products, setProducts] = useState([]);
-
+  const location = useLocation();
   const [products, setProducts] = useState([]);
+  console.log(location.state)
 
   useEffect(() => {
     (async () => {

@@ -9,6 +9,7 @@ import About from "./components/about/about";
 import Signup from "./components/signup/signup";
 import Login from "./components/login/login.js";
 import Cart from "./components/cart/cart";
+import './components/style/global.css'
 function App() {
   return (
     <>
